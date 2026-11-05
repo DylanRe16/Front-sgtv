@@ -3,3 +3,54 @@
 @use './layout/layout.scss';
 @use 'primeicons/primeicons.css';
 @use './demo/demo.scss';
+
+/* Estilos de Ticket SGVTI y Optimización para Impresión Térmica / Estándar */
+.ticket-container {
+    background: #ffffff;
+    color: #1f2937;
+    border-radius: 12px;
+    border: 2px dashed #cbd5e1;
+    position: relative;
+    padding: 1.5rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+}
+
+.ticket-number-badge {
+    font-size: 2.25rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #1e3a8a;
+    background: #eff6ff;
+    padding: 0.5rem 1.25rem;
+    border-radius: 8px;
+    border: 2px solid #3b82f6;
+    display: inline-block;
+}
+
+@media print {
+    /* Ocultar todos los elementos excepto el ticket */
+    body * {
+        visibility: hidden !important;
+    }
+    #sgvti-printable-ticket,
+    #sgvti-printable-ticket * {
+        visibility: visible !important;
+    }
+    #sgvti-printable-ticket {
+        position: fixed !important;
+        left: 0 !important;
+        top: 0 !important;
+        width: 100% !important;
+        max-width: 380px !important;
+        margin: 0 auto !important;
+        padding: 16px !important;
+        box-shadow: none !important;
+        border: 2px dashed #000000 !important;
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-family: monospace, sans-serif !important;
+    }
+    .no-print {
+        display: none !important;
+    }
+}

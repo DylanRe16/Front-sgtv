@@ -12,6 +12,7 @@
     "private": true,
     "dependencies": {
         "@angular/animations": "^20",
+        "@angular/cdk": "^20.2.14",
         "@angular/common": "^20",
         "@angular/compiler": "^20",
         "@angular/core": "^20",
@@ -51,5 +52,12 @@
         "prettier": "^3.6.2",
         "tailwindcss": "^4.1.11",
         "typescript": "~5.8.3"
-    }
+    },
+    "/api": {
+    "target": "http://172.17.1.83",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+    
 }
